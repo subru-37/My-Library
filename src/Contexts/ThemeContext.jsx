@@ -1,7 +1,20 @@
 import { extendTheme } from "@chakra-ui/react";
 // example theme
-const defaultTheme = {
-  colors: {},
+export const defaultTheme = extendTheme({
+  colors: {
+    dark: {
+      bg: "#051918",
+      primary: "#0BBA5B",
+      text: "#ffffff",
+      borderColor: "#E8F7EE",
+    },
+    light: {
+      bg: "#E8F7EE",
+      primary: "#051918",
+      text: "#000000",
+      borderColor: "#0BBA5B",
+    },
+  },
   fonts: {
     body: "system-ui, sans-serif",
     heading: "Georgia, serif",
@@ -58,7 +71,7 @@ const defaultTheme = {
     wider: "0.05em",
     widest: "0.1em",
   },
-};
+});
 
 const breakpoints = {
   base: "0em",
@@ -68,7 +81,10 @@ const breakpoints = {
   xl: "80em",
   "2xl": "96em",
 };
-
+const config = {
+  initialColorMode: "dark",
+  useSystemColorMode: false,
+};
 const spacing = {
   space: {
     px: "1px",
@@ -124,11 +140,11 @@ const borderRadius = {
 const ButtonStyles = {
   variants: {
     solid: {
-      //   fontWeight: "bold",
-      //   borderRadius: "8px",
-      //   color: "white",
-      //   backgroundColor: "grey",
-      //   border: "2px grey solid",
+      // fontWeight: "bold",
+      // borderRadius: "8px",
+      // color: "white",
+      // backgroundColor: "grey",
+      // border: "2px grey solid",
     },
   },
 };
@@ -144,10 +160,12 @@ const containerStyles = {
   },
 };
 
-export const theme = extendTheme({
-  defaultTheme,
-  spacing,
-  borderRadius,
-  breakpoints,
-  components: { Button: ButtonStyles, Box: containerStyles },
-});
+// export const theme = extendTheme({
+//   defaultTheme,
+//   // spacing,
+//   // borderRadius,
+//   // breakpoints,
+//   // components: { Button: ButtonStyles, Box: containerStyles },
+//   config,
+// });
+// export defaultTheme;
